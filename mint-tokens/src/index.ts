@@ -126,6 +126,8 @@ async function burnTokens(
   );
 }
 
+//---------------
+
 async function createTokenMetadata(
   connection: web3.Connection,
   metaplex: Metaplex,
@@ -145,7 +147,7 @@ async function createTokenMetadata(
   const imageUri = await metaplex.storage().upload(file);
   console.log("image uri: ", imageUri);
 
-  // upload metadata nad get metadata uri (off chain metadata)
+  // upload metadata and get metadata uri (off chain metadata)
   const { uri } = await metaplex.nfts().uploadMetadata({
     name: name,
     description: description,
